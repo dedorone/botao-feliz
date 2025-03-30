@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Botão Inútil</title>
+  <style>
+    body {
+      background-color: #44413F;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    button {
+      background-color: #D7321E;
+      border: none;
+      padding: 450px 450px;
+      font-size: 150px;
+      color: white;
+      border-radius: 2500px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:active {
+      background-color: #FFFFF;
+    }
+
+    #counter {
+      margin-top: 20px;
+      font-size: 100px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="uselessBtn"></button>
+  <div id="counter">Tá esperando o que para ser feliz??</div>
+
+  <script>
+    let count = 0;
+    const btn = document.getElementById("uselessBtn");
+    const counter = document.getElementById("counter");
+
+    btn.addEventListener("click", () => {
+      count++;
+      counter.textContent = `Você ganhou felicidade ${count} ${count === 1 ? 'vez' : 'vezes'}! =)`;
+    });
+  </script>
+
+</body>
+</html>
