@@ -11,41 +11,40 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      padding-top: 40px;
+      text-align: center;
       height: 100vh;
       overflow: hidden;
       position: relative;
-      text-align: center;
-      padding: 20px;
     }
 
-    #uselessBtn {
+    button {
       background-color: #D7321E;
       border: none;
-      padding: 250px 250px;
-      font-size: 60px;
+      padding: 200px 200px;
+      font-size: 100px;
       color: white;
-      border-radius: 450px;
+      border-radius: 1000px;
       cursor: pointer;
       transition: background-color 0.2s;
     }
 
-    #uselessBtn:active {
-      background-color: #FF5555;
+    button:active {
+      background-color: #FFFFFF;
     }
 
     #counter {
       margin-top: 30px;
-      font-size: 36px;
+      font-size: 60px;
       color: #ccc;
     }
 
     #emergencyBtn {
       margin-top: 50px;
       background-color: #1e90ff;
-      padding: 30px 50px;
-      font-size: 28px;
-      border-radius: 30px;
+      padding: 40px 40px;
+      font-size: 40px;
+      border-radius: 40px;
       color: white;
       border: none;
       display: none;
@@ -59,14 +58,14 @@
 
     #secretMessage {
       margin-top: 40px;
-      font-size: 32px;
+      font-size: 50px;
       color: #ffff66;
       display: none;
     }
 
     .emoji {
       position: absolute;
-      font-size: 40px;
+      font-size: 60px;
       animation: floatUp 2s ease-out forwards;
       pointer-events: none;
     }
@@ -85,9 +84,9 @@
 </head>
 <body>
 
-  <button id="uselessBtn">🧘</button>
+  <button id="uselessBtn"></button>
   <div id="counter">APERTE E LIVRE-SE DO ESTRESSE!</div>
-  <button id="emergencyBtn">🚨 PROTOCOLO DE EMERGÊNCIA</button>
+  <button id="emergencyBtn">PROTOCOLO DE EMERGÊNCIA</button>
   <div id="secretMessage">Quando o Eduardo der a ordem, ligue o flash!</div>
 
   <script>
