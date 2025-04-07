@@ -13,6 +13,8 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
+      overflow: hidden;
+      position: relative;
       text-align: center;
     }
 
@@ -60,6 +62,24 @@
       color: #ffff66;
       display: none;
     }
+
+    .emoji {
+      position: absolute;
+      font-size: 60px;
+      animation: floatUp 2s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -87,7 +107,22 @@
 
     emergencyBtn.addEventListener("click", () => {
       secretMessage.style.display = "block";
+      for (let i = 0; i < 30; i++) {
+        setTimeout(() => spawnEmoji(), i * 100);
+      }
     });
+
+    function spawnEmoji() {
+      const emoji = document.createElement("div");
+      emoji.textContent = "🚨";
+      emoji.className = "emoji";
+      emoji.style.left = Math.random() * 90 + "%";
+      document.body.appendChild(emoji);
+
+      setTimeout(() => {
+        emoji.remove();
+      }, 2000);
+    }
   </script>
 
 </body>
