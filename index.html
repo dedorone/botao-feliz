@@ -13,6 +13,7 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
+      text-align: center;
     }
 
     button {
@@ -35,21 +36,57 @@
       font-size: 100px;
       color: #ccc;
     }
+
+    #emergencyBtn {
+      margin-top: 80px;
+      background-color: #1e90ff;
+      padding: 80px 80px;
+      font-size: 80px;
+      border-radius: 80px;
+      color: white;
+      border: none;
+      display: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #emergencyBtn:hover {
+      background-color: #1570c0;
+    }
+
+    #secretMessage {
+      margin-top: 60px;
+      font-size: 80px;
+      color: #ffff66;
+      display: none;
+    }
   </style>
 </head>
 <body>
 
   <button id="uselessBtn"></button>
   <div id="counter">APERTE E LIVRE-SE DO ESTRESSE!</div>
+  <button id="emergencyBtn">PROTOCOLO DE EMERGÊNCIA</button>
+  <div id="secretMessage">Quando o Eduardo der a ordem, ligue o flash!</div>
 
   <script>
     let count = 0;
     const btn = document.getElementById("uselessBtn");
     const counter = document.getElementById("counter");
+    const emergencyBtn = document.getElementById("emergencyBtn");
+    const secretMessage = document.getElementById("secretMessage");
 
     btn.addEventListener("click", () => {
       count++;
-      counter.textContent = `Você se livrou do estresse ${count} ${count === 1 ? 'vez' : 'vezes'}! =)`;
+      counter.textContent = `Você se livrou do estresse ${count} ${count === 1 ? 'vez' : 'vezes'}! =)`;      
+
+      if (count === 30) {
+        emergencyBtn.style.display = "block";
+      }
+    });
+
+    emergencyBtn.addEventListener("click", () => {
+      secretMessage.style.display = "block";
     });
   </script>
 
